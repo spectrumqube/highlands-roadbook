@@ -1,8 +1,8 @@
 const CACHE_NAME = 'highlands-roadbook-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/manifest.json'
+  './',
+  './index.html',
+  './manifest.json'
 ];
 
 self.addEventListener('install', event => {
@@ -35,7 +35,7 @@ self.addEventListener('fetch', event => {
           return response;
         }
         return fetch(event.request).catch(() => {
-          return caches.match('/');
+          return caches.match('./index.html');
         });
       })
   );
